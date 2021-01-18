@@ -1,0 +1,362 @@
+{
+    "entries": [
+        {
+            "1": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "The leader of Aarhus is Jacob Bundsgaard.",
+                        "xml_id": "Id1"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "Jacob_Bundsgaard",
+                        "property": "leaderName",
+                        "subject": "Aarhus"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "Jacob_Bundsgaard",
+                                "property": "leaderName",
+                                "subject": "Aarhus"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id1"
+            }
+        },
+        {
+            "2": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Aarhus Airport's runway length is 2702.0.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "The Aarhus Airport has a runway length of 2702.0.",
+                        "xml_id": "Id2"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "2702.0",
+                        "property": "runwayLength",
+                        "subject": "Aarhus_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "\"2702.0\"^^xsd:double",
+                                "property": "runwayLength",
+                                "subject": "Aarhus_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id2"
+            }
+        },
+        {
+            "3": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Adirondack Regional Airport is 507 metres above sea level.",
+                        "xml_id": "Id1"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "507",
+                        "property": "elevationAboveTheSeaLevel_(in_metres)",
+                        "subject": "Adirondack_Regional_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "507",
+                                "property": "elevationM",
+                                "subject": "Adirondack_Regional_Airport"
+                            }
+                        ],
+                        [
+                            {
+                                "object": "\"507.0\"^^xsd:double",
+                                "property": "elevation",
+                                "subject": "Adirondack_Regional_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id3"
+            }
+        },
+        {
+            "4": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Adirondack Regional airport is located at Harrietstown, New York.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "Adirondack Regional Airport is located in Harrietstown, New York.",
+                        "xml_id": "Id2"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "Harrietstown,_New_York",
+                        "property": "location",
+                        "subject": "Adirondack_Regional_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "Harrietstown,_New_York",
+                                "property": "location",
+                                "subject": "Adirondack_Regional_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id4"
+            }
+        },
+        {
+            "5": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Adolfo Suárez Madrid–Barajas Airport is found in San Sebastián de los Reyes.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "Adolfo Suarez Madrid-Barajas airport is located at San Sebastian de los Reyes.",
+                        "xml_id": "Id2"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "The Adolfo Suárez Madrid–Barajas Airport is in San Sebastián de los Reyes.",
+                        "xml_id": "Id3"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "San_Sebastián_de_los_Reyes",
+                        "property": "location",
+                        "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "San_Sebastián_de_los_Reyes",
+                                "property": "location",
+                                "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id5"
+            }
+        },
+        {
+            "6": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Adolfo Suárez Madrid-Barajas Airport runway name is 14L/32R.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "The Adolfo Suárez Madrid–Barajas Airport runway name is 14L/32R.",
+                        "xml_id": "Id2"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "14L/32R is the runway name of Adolfo Suárez Madrid-Barajas Airport.",
+                        "xml_id": "Id3"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "\"14L/32R\"",
+                        "property": "runwayName",
+                        "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "\"14L/32R\"",
+                                "property": "runwayDesignation",
+                                "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id6"
+            }
+        },
+        {
+            "7": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "14R/32L is the name of the runway for Adolfo Suárez Madrid–Barajas Airport.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "14R/32L is the runway name of Adolfo Suárez Madrid-Barajas Airport.",
+                        "xml_id": "Id2"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "\"14R/32L\"",
+                        "property": "runwayName",
+                        "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "\"14R/32L\"",
+                                "property": "runwayDesignation",
+                                "subject": "Adolfo_Suárez_Madrid–Barajas_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id7"
+            }
+        },
+        {
+            "8": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "The operating organization for Afonso Pena International Airport is Infraero.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "Afonso Pena International Airport is operated by Infraero.",
+                        "xml_id": "Id2"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "Infraero",
+                        "property": "operatingOrganisation",
+                        "subject": "Afonso_Pena_International_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "Infraero",
+                                "property": "operator",
+                                "subject": "Afonso_Pena_International_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id8"
+            }
+        },
+        {
+            "9": {
+                "category": "Airport",
+                "lexicalisations": [
+                    {
+                        "comment": "good",
+                        "lex": "Agra Airport is in Agra.",
+                        "xml_id": "Id1"
+                    },
+                    {
+                        "comment": "good",
+                        "lex": "Agra airport is located in Agra.",
+                        "xml_id": "Id2"
+                    }
+                ],
+                "modifiedtripleset": [
+                    {
+                        "object": "Agra",
+                        "property": "location",
+                        "subject": "Agra_Airport"
+                    }
+                ],
+                "originaltriplesets": {
+                    "originaltripleset": [
+                        [
+                            {
+                                "object": "Agra",
+                                "property": "location",
+                                "subject": "Agra_Airport"
+                            }
+                        ]
+                    ]
+                },
+                "shape": "(X (X))",
+                "shape_type": "NA",
+                "size": "1",
+                "xml_id": "Id9"
+            }
+        }
+    ]
+}
