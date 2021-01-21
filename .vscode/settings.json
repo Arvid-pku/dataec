@@ -1,3 +1,4 @@
 {
-    "editor.renderControlCharacters": true
+    "editor.renderControlCharacters": true,
+    "python.pythonPath": "/home/yinxunjian/anaconda3/envs/bnmt/bin/python"
 }
