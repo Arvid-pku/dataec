@@ -30,7 +30,7 @@ HIDDEN_SIZE = 256
 BATCH_SIZE = 32
 STEPS_PER_EPOCH = 500
 EPOCHS = 10
-
+device = torch.device('cuda:1')
 
 class Encoder(nn.Module):
   def __init__(self, hidden_size: int):
@@ -129,7 +129,7 @@ class PointerNetwork(nn.Module):
 
     # Array elements as features
     # encoder_in: (BATCH, ARRAY_LEN, 1)
-    encoder_in = x.unsqueeze(-1).type(torch.float)
+    encoder_in = x.unsqueeze(-1).type(torch.float).to(device)
 
     # out: (BATCH, ARRAY_LEN, HIDDEN_SIZE)
     # hs: tuple of (NUM_LAYERS, BATCH, HIDDEN_SIZE)
@@ -140,12 +140,13 @@ class PointerNetwork(nn.Module):
 
     # Save outputs at each timestep
     # outputs: (ARRAY_LEN, BATCH)
-    outputs = torch.zeros(out.size(1), out.size(0), dtype=torch.long)
+    outputs = torch.zeros(out.size(1), out.size(0), dtype=torch.long).to(device)
     
     # First decoder input is always 0
     # dec_in: (BATCH, 1, 1)
-    dec_in = torch.zeros(out.size(0), 1, 1, dtype=torch.float)
+    dec_in = torch.zeros(out.size(0), 1, 1, dtype=torch.float).to(device)
     
+    # TODO
     for t in range(out.size(1)):
       hs, att_w = decoder(dec_in, hs, out)
       predictions = F.softmax(att_w, dim=1).argmax(1)
@@ -177,6 +178,8 @@ def train(model, optimizer, epoch, clip=1.):
 
     # Forward
     x, y = batch(BATCH_SIZE)
+    x=x.to(device)
+    y=y.to(device)
     out, loss = model(x, y)
 
     # Backward
@@ -194,7 +197,8 @@ def evaluate(model, epoch):
   print('Epoch [{}] -- Evaluate'.format(epoch))
 
   x_val, y_val = batch(4)
-  
+  x_val = x_val.to(device)
+  y_val = y_val.to(device)
   out, _ = model(x_val, y_val, teacher_force_ratio=0.)
   out = out.permute(1, 0)
 
@@ -206,9 +210,9 @@ def evaluate(model, epoch):
     ))
 
 
-encoder = Encoder(HIDDEN_SIZE)
-decoder = Decoder(HIDDEN_SIZE)
-ptr_net = PointerNetwork(encoder, decoder)
+encoder = Encoder(HIDDEN_SIZE).to(device)
+decoder = Decoder(HIDDEN_SIZE).to(device)
+ptr_net = PointerNetwork(encoder, decoder).to(device)
 
 optimizer = optim.Adam(ptr_net.parameters())
 
