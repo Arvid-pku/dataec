@@ -4,3 +4,5 @@
 # Python
 __pycache__/
 *.pyc
+*.zip
+glove.6B.zip/
