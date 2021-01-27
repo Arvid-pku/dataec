@@ -71,17 +71,24 @@ def bilstm_train_and_eval(train_data, dev_data, test_data,
 
     print("训练完毕,共用时{}秒.".format(int(time.time()-start)))
     print("评估{}模型中...".format(model_name))
-    pred_tag_lists, test_tag_lists = bilstm_model.test(
+    pred_tag_lists, pred_tag_lists = bilstm_model.test(
         test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists, word2id, data2id)
 
     #for pred, gold in zip(pred_tag_lists, test_tag_lists):
         #print(pred, gold)
 
-    metrics = Metrics(test_tag_lists, pred_tag_lists, remove_O=remove_O)
-    metrics.report_scores()
-    metrics.report_confusion_matrix()
+    allnum = 0
+    correct = 0
+    for pred, gold in zip(pred_tag_lists, pred_tag_lists):
+        pred = pred.cpu().numpy().tolist()[:len(gold)]
+        for x, y in zip(pred, gold):
+            if x == y:
+                correct += 1
+            allnum += 1
 
-    return pred_tag_lists
+    print(correct/allnum)
+
+    return correct/allnum
 
 
 def ensemble_evaluate(results, targets, remove_O=False):

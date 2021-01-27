@@ -4,7 +4,7 @@ from evaluate import bilstm_train_and_eval
 
 def main():
     print("读取数据...")
-    train_word_lists, train_data_lists, train_wordlabel_lists, train_datalabel_lists, train_dataptr_lists, word2id, data2id = build_corpus("dev")
+    train_word_lists, train_data_lists, train_wordlabel_lists, train_datalabel_lists, train_dataptr_lists, word2id, data2id = build_corpus("train")
     dev_word_lists, dev_data_lists, dev_wordlabel_lists, dev_datalabel_lists, dev_dataptr_lists = build_corpus("dev", make_vocab=False)
     test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists = build_corpus("test", make_vocab=False)
 

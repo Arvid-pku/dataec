@@ -2,6 +2,7 @@ from utils import load_model, extend_maps, prepocess_data_for_lstmcrf
 from data import build_corpus
 from evaluating import Metrics
 from evaluate import ensemble_evaluate
+import numpy
 
 # HMM_MODEL_PATH = './ckpts/hmm.pkl'
 # CRF_MODEL_PATH = './ckpts/crf.pkl'
@@ -13,7 +14,7 @@ REMOVE_O = False  # 在评估的时候是否去除O标记
 
 def main():
     print("读取数据...")
-    train_word_lists, train_data_lists, train_wordlabel_lists, train_datalabel_lists, train_dataptr_lists, word2id, data2id = build_corpus("dev")
+    train_word_lists, train_data_lists, train_wordlabel_lists, train_datalabel_lists, train_dataptr_lists, word2id, data2id = build_corpus("train")
     dev_word_lists, dev_data_lists, dev_wordlabel_lists, dev_datalabel_lists, dev_dataptr_lists = build_corpus("dev", make_vocab=False)
     test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists = build_corpus("test", make_vocab=False)
 
@@ -37,16 +38,24 @@ def main():
 
     # bilstm模型
     print("加载并评估bilstm模型...")
+    # test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists = test_word_lists[890:950:10], test_data_lists[890:950:10], test_wordlabel_lists[890:950:10], test_datalabel_lists[890:950:10], test_dataptr_lists[890:950:10]
+    # print(test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists)
     bilstm_word2id, bilstm_data2id = extend_maps(word2id, data2id, for_crf=False)
     bilstm_model = load_model(BiLSTM_MODEL_PATH)
     bilstm_model.model.bilstm.flatten_parameters()  # remove warning
-    lstm_pred, target_tag_list = bilstm_model.test(test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists, word2id, data2id)
+    lstm_pred, target_tag_list = bilstm_model.test(test_word_lists, test_data_lists, test_wordlabel_lists, test_datalabel_lists, test_dataptr_lists, bilstm_word2id, bilstm_data2id)
+    allnum = 0
+    correct = 0
     for pred, gold in zip(lstm_pred, target_tag_list):
-        print(pred, gold)
-        
-    metrics = Metrics(target_tag_list, lstm_pred, remove_O=REMOVE_O)
-    metrics.report_scores()
-    metrics.report_confusion_matrix()
+        pred = pred.cpu().numpy().tolist()[:len(gold)]
+        for x, y in zip(pred, gold):
+            if x == y:
+                correct += 1
+            allnum += 1
+
+    print(correct/allnum)
+
+
 
     # print("加载并评估bilstm+crf模型...")
     # crf_word2id, crf_tag2id, crf_data2id = extend_maps(word2id, tag2id, data2id, for_crf=True)
