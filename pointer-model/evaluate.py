@@ -80,7 +80,7 @@ def bilstm_train_and_eval(train_data, dev_data, test_data,
     allnum = 0
     correct = 0
     for pred, gold in zip(pred_tag_lists, pred_tag_lists):
-        pred = pred.cpu().numpy().tolist()[:len(gold)]
+        pred = pred[:len(gold)]
         for x, y in zip(pred, gold):
             if x == y:
                 correct += 1

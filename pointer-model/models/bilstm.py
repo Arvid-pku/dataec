@@ -5,7 +5,7 @@ import torch.nn.functional as F
 
 def getentity(batch_datalabels, data_out, device):
     dataentitys = []
-    h2=256
+    h2=128
     for datalabel, batch in zip(batch_datalabels, data_out):
         entityvec = torch.zeros(h2).to(device)
         st = False

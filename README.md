@@ -12,3 +12,11 @@
     尝试实体识别模型
     写向量的平均等操作
     尝试pointernetwork，学习阅读源码
+    后补模型架构
+
+文件说明：
+data：真数据+伪数据
+label-model：标注错误实体
+pointer-model：修改实体
+pointer-nn-model：指针网络学习
+
