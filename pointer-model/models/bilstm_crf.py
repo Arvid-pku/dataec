@@ -180,5 +180,3 @@ class BILSTM_Model(object):
         tag_lists = [dataptr_lists[i] for i in indices]
 
         return pred_tag_lists, tag_lists
-
-
